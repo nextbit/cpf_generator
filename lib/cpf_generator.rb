@@ -16,14 +16,7 @@ module CpfGenerator
         value += @numbers[index] * mult
       end
 
-      remainder = (value % 11)
-      if remainder < 2
-        @numbers << 0
-        0
-      else
-        @numbers << (11 - remainder)
-        (11 - remainder)
-      end
+      check_remainder(value % 11)
     end
 
     def second_dv
@@ -34,7 +27,10 @@ module CpfGenerator
         value += @numbers[index] * mult
       end
 
-      remainder = (value % 11)
+      check_remainder(value % 11)
+    end
+
+    def check_remainder(remainder)
       if remainder < 2
         @numbers << 0
         0
