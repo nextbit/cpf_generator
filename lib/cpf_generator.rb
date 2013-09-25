@@ -1,19 +1,27 @@
 require "cpf_generator/version"
 
 module CpfGenerator
+  def initialize
+    numbers
+  end
+
   def self.formatted
-    Cpf.new.formatted
+    Cpf.new(numbers).formatted
   end
 
   def self.unformatted
-    Cpf.new.unformatted
+    Cpf.new(numbers).unformatted
+  end
+
+  def self.numbers
+    [*0..9].sample(9)
   end
 
   class Cpf
     attr_accessor :numbers
 
-    def initialize
-      @numbers = [*0..9].sample(9)
+    def initialize(numbers)
+      @numbers = numbers
     end
 
     def formatted
