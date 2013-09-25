@@ -1,6 +1,6 @@
 # CpfGenerator
 
-Gerador de cpf para testes. É algo bem básico usado para gerar cpfs válidos para ser usados em testes. 
+Gerador de cpf para testes. É algo bem básico usado para gerar cpfs válidos para ser usados em testes.
 
 EN: This is a simple gem to create brazilian cpf numbers to be used for software tests
 
@@ -21,15 +21,14 @@ Ou se preferir, instale no seu sistema:
 ## Uso
 
 A gem te disponibiliza dois métodos para gerar cpf. **formatted** e **unformatted**
-	
+
 	require 'cpf_generator'
-	cpf = CpfGenerator::Cpf.new
-	
+
 	# Para gerar um cpf formatado
-	cpf.formatted => # 710.743.079-33
+	CpfGenerator.formatted => # 710.743.079-33
 
 	# Para gerar um cpf não formatado
-	cpf.unformatted => # 71074307933
+	CpfGenerator.unformatted => # 71074307933
 
 
 ## Contribuindo
