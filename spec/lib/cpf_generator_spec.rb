@@ -1,7 +1,20 @@
 require 'spec_helper'
 require_relative '../../lib/cpf_generator'
 
+describe CpfGenerator do
+
+  it "#formatted" do
+    CpfGenerator.formatted.should =~ /\d{3}.\d{3}.\d{3}-\d{2}$/
+  end
+
+  it "#unformatted" do
+    CpfGenerator.unformatted.should match(/\d{11}$/)
+  end
+end
+
+
 describe "CPF class" do
+
   it "initialize a cpf class with an array of 9 randon numbers" do
     first_cpf = CpfGenerator::Cpf.new
     first_cpf.numbers.size.should == 9

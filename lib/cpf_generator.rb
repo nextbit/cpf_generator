@@ -1,11 +1,34 @@
 require "cpf_generator/version"
 
 module CpfGenerator
+  class << self
+    def formatted
+      Cpf.new.formatted
+    end
+
+    def unformatted
+      Cpf.new.unformatted
+    end
+  end
+
   class Cpf
     attr_accessor :numbers
 
     def initialize
       @numbers = [*0..9].sample(9)
+    end
+
+    def formatted
+      first_dv
+      second_dv
+      cpf = @numbers.join("")
+      "#{cpf[0..2]}.#{cpf[3..5]}.#{cpf[6..8]}-#{cpf[9..11]}"
+    end
+
+    def unformatted
+      first_dv
+      second_dv
+      @numbers.join("")
     end
 
     def first_dv
@@ -38,19 +61,6 @@ module CpfGenerator
         @numbers << (11 - remainder)
         (11 - remainder)
       end
-    end
-
-    def formatted
-      first_dv
-      second_dv
-      cpf = @numbers.join("")
-      "#{cpf[0..2]}.#{cpf[3..5]}.#{cpf[6..8]}-#{cpf[9..11]}"
-    end
-
-    def unformatted
-      first_dv
-      second_dv
-      @numbers.join("")
     end
   end
 end
