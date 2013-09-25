@@ -1,14 +1,12 @@
 require "cpf_generator/version"
 
 module CpfGenerator
-  class << self
-    def formatted
-      Cpf.new.formatted
-    end
+  def self.formatted
+    Cpf.new.formatted
+  end
 
-    def unformatted
-      Cpf.new.unformatted
-    end
+  def self.unformatted
+    Cpf.new.unformatted
   end
 
   class Cpf
