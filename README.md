@@ -1,4 +1,7 @@
 # CpfGenerator
+[![Build status](https://secure.travis-ci.org/ustrajunior/cpf_generator.png)](https://secure.travis-ci.org/ustrajunior/cpf_generator)
+[![Dependency Status](https://gemnasium.com/ustrajunior/cpf_generator.png)](https://gemnasium.com/ustrajunior/cpf_generator)
+[![Code Quality](https://d3s6mut3hikguw.cloudfront.net/github/ustrajunior/cpf_generator.png)](https://codeclimate.com/github/ustrajunior/cpf_generator)
 
 Gerador de cpf para testes. É algo bem básico usado para gerar cpfs válidos para ser usados em testes.
 
